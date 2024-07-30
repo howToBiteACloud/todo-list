@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>to-do</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link href="asserts/Rostov/Rostov.ttf" rel="stylesheet">
+  <link href="asserts/PIXY/PIXY.ttf" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&family=Rubik+Scribble&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="asserts/masonry.pkgd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <span class="header__text">
+      <div class="header__text-to">TO</div>
+    DO</span>
+  </header>
+  
+  <div class="wrapper">
+    <div class="selector"></div>
+    <div class="grid">
+    </div>
+    <button class="new-task-button">
+      <my-svg src="https://taiga-ui.dev/assets/taiga-ui/icons/tuiIconFeatherOutline.svg?v=3.72.0"></my-svg>
+     </button>
+  </div>
+
+  <dialog>
+    <div class="redactor">
+      <div class="redactor__header">
+        <div class="redactor__toolbar">
+          <span id="toolbar">
+            <button class="button-dialog" id="bold" title="Bold (Ctrl+B)">B</button>
+            <button class="button-dialog" id="italic" title="Italic (Ctrl+I)">I</button>
+            <button class="button-dialog" id="underline" title="Underline (Ctrl+U)"><ins>U</ins></button>
+            <span class="delimiter">
+              <select name="fonts" class="fonts">
+                <option value="Arial" selected>Arial</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Rostov">Rostov</option>
+                <option value="Rubik Scribble">Rubik Scribble</option>
+                <option value="PIXY">PIXY</option>
+                <option value="Caveat">Caveat</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Impact">Impact</option>
+                <option value="Courier New">Courier New</option>
+              </select>
+              <select name="size" class="size">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+              </select>
+              <input type="color" id="color"/>
+            </span>
+            <span class="delimiter">
+                <button class="button-dialog" id="align-left" title="Left"><i class="fa fa-align-left"></i></button>
+                <button class="button-dialog" id="align-center" title="Center"><i class="fa fa-align-center"></i></button>
+                <button class="button-dialog" id="align-right" title="Right"><i class="fa fa-align-right"></i></button>
+            </span>
+            <span class="delimiter">
+                <button class="button-dialog" id="list-ul" title="Unordered List"><i class="fa fa-list-ul"></i></button>
+                <button class="button-dialog" id="list-ol" title="Ordered List"><i class="fa fa-list-ol"></i></button>
+            </span>
+          </span>
+          
+          <div class="redactor__actions">
+            <button id="save">
+              <my-svg src="https://taiga-ui.dev/assets/taiga-ui/icons/tuiIconSaveOutline.svg?v=3.72.0"></my-svg>
+            </button>
+            <button autofocus id="close"></button>
+          </div>
+        </div>
+        <!-- toolbar end -->
+
+        <div class="redactor__title">
+          <h1 contenteditable class="content__title"></h1>
+        </div>
+      </div>
+
+      <div class="redactor__content">
+        <div contenteditable="true" id="editor"></div>
+      </div>
+
+      <button class="dialog__delete">
+        <my-svg src="https://taiga-ui.dev/assets/taiga-ui/icons/tuiIconTrashOutline.svg?v=3.72.0"></my-svg>
+      </button>
+    </div>
+  </dialog>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
+
